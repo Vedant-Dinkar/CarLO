@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="homeA.css">
+    <link rel="stylesheet" href="/">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+    <title>Dashboard | CarLO</title>
+    <style>
+        *{background-color: transparent;}
+    </style>
+</head>
+<body>
+    <div class="screen" style="display: flex; flex-flow: column;">
+    <div class="m">
+
+        <div class="navbarContainer">
+            <div class="navbar">
+              <ul>
+                <img id="mainLogo" src="logo.png" />
+                <a href="#ghar">Home</a>
+                <a href="#kiraaya">Rent</a>
+                <a href="#jagaha">Locations</a>
+                <a href="#samparka">Contact Us</a>      
+                <div class="profile">
+                  <% if(profImg){ %>
+                    <a href="/profile">
+                      <img src="<%= profImg %>" />
+                    </a>
+                  <% } %>
+                  <% if(!profImg){ %>
+                    <a href="/auth/google/">
+                      <img src="profileLogo.png" />
+                    </a>
+                  <% } %>
+                </div>
+                </a>
+              </ul>
+            </div>
+          </div>
+
+        <div class="main">
+            <div class="user">
+                <div class="user-image">
+                    <% if(profImg){ %>
+                        <img class = "user-im" src="<%= profImg %>">
+                    <% } %>
+                </div>
+                <div class="user-info">
+                    <h2 class="user-info-text">Welcome!</h2>
+                    <p>Check your bookings here!</p>
+                    <a href="/logout"><button style="background-color: rgb(45, 54, 93); color: white; border: none; padding: 5px; border-radius: 10px;">Log Out</button></a>
+                </div>
+            </div>
+            <div class="booking">
+                <div class="booking-heading">
+                    <div class="dat">ID</div>
+                    <div class="dat">Car</div>
+                    <div class="dat">Start</div>
+                    <div class="dat">End</div>
+                    <div class="dat">From</div>
+                    <div class="dat">To</div>
+                    <div class="dat">Amount</div>
+                </div>
+                <div class="booking-content">
+                    <!-- <% book.forEach(listing =>{ %>
+                        <div class="res">
+                            <div class="res1 res-id"><%= listing.paymentid %></div>
+                            <img src="<%= listing.image_car %>" />
+                            <div class="res1 res-start"><%= listing.start_date.toString().slice(4,16) %>
+              
+                           </div>
+                            <div class="res1 res-end"><%= listing.end_date.toString().slice(4,16) %></div>
+                            <div class="res1 res-from"><%= listing.centre_from %></div>
+                            <div class="res1 res-to"><%= listing.centre_to %></div>
+                            <div class="res1 res-amount"><%= listing.amount %></div>
+                        </div>
+                    <% }); %> -->
+                    <% for(let i=0; i<n; i++){ %>
+                        <div class="res">
+                            <div class="res1 res-id"><%= book[i].paymentsid %></div>
+                            <img src="<%= car[i].imagelink %>" />
+                            <div class="res1 res-start"><%= book[i].start_date %>
+                                <!-- <script>
+                                    const startDate = listing.start_date;
+                                    const formattedstartDate = startDate.slice(0,16);
+                                    document.getElementById('displayDate').innerText = formattedstartDate;
+                                </script> -->
+                                <!-- <p id="displayDate"></p> -->
+                                
+                            </div>
+                            <div class="res1 res-end"><%= book[i].end_date %></div>
+                            <div class="res1 res-from"><%= book[i].centre_from %></div>
+                            <div class="res1 res-to"><%= book[i].centre_to %></div>
+                            <div class="res1 res-amount"><%= book[i].amount %></div>
+                        </div>
+                    <% }; %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

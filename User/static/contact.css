@@ -1,0 +1,248 @@
+/* .contact{
+    height: 550px;
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+} */
+
+/* .top{
+    font-size: 40px;
+    font-family: 'Ubuntu';
+    color: white;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.loc{
+    height: 180px;
+    width: 500px;
+    background-color: rgb(11, 84, 210);
+    box-shadow: 2px 0px white;
+    display: inline;
+    margin-left: 10px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.gmaps{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 55px;
+    margin-top: 25px;
+    display: inline;
+}
+
+.call{
+    height: 180px;
+    width: 500px;
+    background-color: rgb(11, 84, 210);
+    display: inline-block;
+    box-shadow: 2px 0px white;
+    margin-top: 45px;
+}
+
+.lady{
+    width: 100px;
+    height: 100px;
+    margin-left: 200px;
+    margin-bottom: 60px;
+    margin-top: 20px;
+    display: inline;
+}
+
+
+.number{
+    display: inline;
+    align-items: center;
+}
+
+.mail{
+    height: 180px;
+    width: 480px;
+    background-color: rgb(11, 84, 210);
+    display: inline-block;
+}
+
+.insta{
+    display:flexbox;
+}
+
+.gmail{
+    width: 40px;
+    height: 40px;
+    margin-left: 100px;
+    margin-bottom: 110px;
+    margin-top: 30px;
+    display: flex;
+}
+
+.insta{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-left: 100px;
+    display: flex;
+} */
+
+/* .contact {
+    height: 450px;
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(90, 156, 255), rgb(66, 111, 190));
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+}
+
+.contact h1 {
+    font-size: 10vh;
+    font-weight: 300;
+    background-color: transparent;
+} */
+
+/* .contactDetails {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 20px;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.contactDetails p {
+    background-color: tr;
+    margin: 10px 0;
+}
+
+.contactDetails strong {
+    color: #5A9CFF;
+}
+
+.contactDetails strong:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #5A9CFF;
+    margin: 5px 0;
+}
+
+.contactDetails p:last-child {
+    margin: 10px 0 0;
+}
+
+.contactDetails p:last-child strong:after {
+    display: none;
+}
+
+.contact h1{
+    font-family: Ubuntu;
+    font-size: 10vh;
+    font-weight: 300;
+    text-align: center;
+    background-color: transparent;
+}
+
+.contactMethods {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.contactMethod {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contactImage img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+} */
+
+/* .contactDetails h2 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+} */
+
+/* .contactDetails p {
+    margin: 15px 0;
+} */
+/* 
+.contactInfo {
+    font-weight: bold;
+    color: #5A9CFF;
+} */
+
+/* #ConMain{
+    display: flex;
+    justify-content: space-around;
+    background-color: transparent;
+}
+
+#ConMain div{
+    border-radius: 24px;
+    width: 200px;
+    height: 160px;
+    align-items: center;
+} */
+
+.contact{
+    height: 450px;
+    width: 100%;
+    background: rgba(90, 156, 255, 0.8);
+    border-radius: 20px 20px 0 0;
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+}
+
+.contact h1{
+    font-size: 10vh;
+    font-weight: 300;
+    background-color: transparent;
+}
+
+#ConMain{
+    display: flex;
+    justify-content: space-around;
+    background-color: transparent;
+}
+
+#ConMain div{
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
+    border-radius: 24px;
+    width: 200px;
+    height: 160px;
+    align-items: center;
+}
+
+#ConMain div img{
+    background-color: transparent;
+}
+
+#ConMain div div h2{
+    background-color: transparent;
+}
+
+#ConMain div div p{
+    background-color: transparent;
+}
+
+.contact{
+    height: 550px;
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+}

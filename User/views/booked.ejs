@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homeA.css">
+    <title>Booked | CarLO</title>
+    <style>
+        .con{
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            right: 25%;
+            bottom: 20%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbarContainer">
+        <div class="navbar">
+          <ul>
+            <img id="mainLogo" src="logo.png" />
+            <a href="#ghar">Home</a>
+            <a href="#kiraaya">Rent</a>
+            <a href="#jagaha">Locations</a>
+            <a href="#samparka">Contact Us</a>      
+            <div class="profile">
+              <% if(profImg){ %>
+                <a href="/profile">
+                  <img src="<%= profImg %>" />
+                </a>
+              <% } %>
+              <% if(!profImg){ %>
+                <a href="/auth/google/">
+                  <img src="profileLogo.png" />
+                </a>
+              <% } %>
+            </div>
+            </a>
+          </ul>
+        </div>
+      </div>
+
+    <div class="con">
+        <h1>Booking Successful!</h1>
+        <h3>Check the details here!</h3>
+        <img src="<%= qrCodePath %>" width="300px" height="300px"/>
+    </div>
+</body>
+</html>

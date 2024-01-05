@@ -1,0 +1,181 @@
+.login-box{
+    height : 70vh;
+    width : 300px;
+    margin: 5%;
+    margin-left: 39%;
+    padding-top: 0%;
+    border-radius: 20px;
+    font-weight: 600;
+    border : 2px black solid;
+    background-color: #ffffff10;
+    backdrop-filter: blur(15px);
+
+    opacity: 90%;
+    box-shadow: 5px 0 0 5px (0.75);
+}
+
+.box-title{
+    height : 40px;
+    width : 300px;
+}
+
+.title-text{
+    padding-top : 10px;
+    padding-left: 110px;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.form-items{
+    display : flex;
+    flex-direction: column;
+}
+
+.form-items > *{
+    align-self: flex-start;
+}
+
+.username{
+    font-weight: 600;
+    font-size: 12px;
+    padding-left : 15px;
+    padding-bottom : 0px;
+    margin-top : 20px;
+    color : #3700c1;
+}
+
+.namebox{
+    width : 80%;
+    height : 30px;
+    margin-top : 10px;
+    margin-left : 20px;
+    outline: none;
+    border : 2px  black solid;
+    border-radius: 4px;
+    transition : background-color 0.25s, border-color 0.25s, color 0.25s;
+    background-color : #3700c1;
+    height : 40px;
+    border-radius : 20px;
+    padding-left: 20px;
+}
+
+.namebox:focus{
+    background-color: rgb(227, 227, 227);
+}
+
+.namebox::placeholder{
+    color :rgb(202, 202, 202);
+}
+
+.namebox-error{
+    /* color : #d50000; */
+    background-color: #fff8f8;
+    /* border-color: #d50000; */
+}
+
+.error-name{
+    padding-top : 6px;
+    padding-left: 20px;
+    /* color: #d50000; */
+    font-size: 0.9em;
+    visibility: hidden;
+}
+
+/* .namebox-error + .error-name{
+    visibility: visible;
+} */
+
+.pass{
+    font-weight: 600;
+    font-size: 12px;
+    padding-left : 15px;
+    padding-bottom : 0px;
+    margin-top : 20px;
+    color : #3700c1;
+}
+
+.user-pass{
+    width : 80%;
+    height : 30px;
+    margin-top : 10px;
+    margin-left : 20px;
+    outline: none;
+    border : 2px black solid;
+    border-radius: 4px;
+    transition : background-color 0.25s, border-color 0.25s, color 0.25s;
+    background-color : #7effb8;
+    height : 40px;
+    border-radius : 20px;
+    padding-left: 20px;
+}
+
+.user-pass:focus{
+    background-color: rgb(255, 255, 255);
+}
+
+.user-pass::placeholder{
+    color :rgb(202, 202, 202);
+}
+
+.user-pass-error{
+    /* color : #d50000; */
+    background-color: #fff8f8;
+    /* border-color: #d50000; */
+}
+
+.error-pass{
+    padding-top : 8px;
+    padding-left: 20px;
+    /* color: #d50000; */
+    font-size: 0.9em;
+    visibility : hidden;
+}
+
+/* .user-pass-error + .error-pass{
+    visibility: visible;
+} */
+
+.log-button{
+    height : 40px;
+    margin-top : 30px;
+    width : 50%;
+    font-family: sans-serif;
+    font-weight: 600;
+    background-color: #4942c7;
+    border-radius: 5px;
+    border : 2px black solid;
+    color: #fff8f8;
+    font-size: 18px;
+}
+
+.log-button:hover{
+    color: #3700c1;
+    background-color: #fff8f8;
+}
+
+.sign-in-para{
+    font-size : 10px;
+    font-size: 11px;
+}
+
+.sign-in-button{
+    height : 40px;
+    margin-left: 102px;
+    width : 100px;
+    font-weight: 600;
+    background-color: #3700c1;
+    border-radius: 20px;
+    border : 2px black solid;
+    color: #fff8f8;
+    font-size: 18px;
+}
+
+.sign-in-button:hover{
+    color: #3700c1;
+    background-color: #fff8f8;
+}
+
+.logs button{
+    margin-left: 23%;
+}

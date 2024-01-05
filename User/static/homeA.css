@@ -1,0 +1,448 @@
+*{
+    background-color: #f8f8f8;
+    font-family: Ubuntu;
+    user-select: none;
+    margin: 0;
+}
+
+/* body{
+    position: relative;
+} */
+
+/* .navbarContainer{
+    height: 12vh; 
+    position: relative;   
+} */
+
+.navbar{
+    background-color: rgb(35, 64, 113);
+    height: 12vh;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+#mainLogo{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    top: 50%;
+    background-color: transparent;
+}
+
+ul{
+    display: flex;
+    top: 40%;
+    background-color: transparent;
+    position: relative;
+    justify-content: space-between;
+}
+
+ul a{
+    background-color: transparent;
+    margin: 0 10%;
+    text-decoration: none;
+    color: white;
+}
+
+ul a:hover{
+    color: aqua;
+}
+
+.profile{
+    overflow: hidden;
+    height: 50px;
+    position: absolute;
+    transform: translateY(-50%);
+    /* transform: translateX(-10%); */
+    top: 50%;
+    right: 20px;
+    align-items: center;
+    background-color: transparent;
+}
+
+.profile img{
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-37%);
+    height: 50px;
+    background-color: transparent;
+}
+
+.profile a{
+    height: 50px;
+    width: 50px;
+}
+
+.design{
+    background-color: #BAEEFF;
+    position: relative;
+    height: 88vh;
+    top: 12vh;
+    overflow: hidden;
+}
+
+.imgs{
+    display: flex;
+    background-color: #BAEEFF;
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+#Sun{
+    background-color: transparent;
+    position: absolute;
+    left: 40%;
+    animation: sunDance 8s ease-in-out 1s infinite;
+}
+
+.cloud{
+    background-color: transparent;
+    position: absolute;
+}
+
+#smallCloud1{
+    top: 15%;
+    left: 8%;
+}
+
+#smallCloud1{
+    top:2%;
+    left: 50%;
+}
+
+#bigCloud1{  
+    top: 5%;
+    left: 10%;  
+}
+
+#bigCloud2{
+    top: 10%;
+    right: 5%;  
+}
+
+.smallCoud{
+    position: absolute;
+    transform: translateY(-30%);
+    background-color: transparent;
+}
+
+.headContainer{
+    overflow: hidden;
+}
+
+.head{
+    z-index: 5;
+    position: absolute;
+    right: 0%;
+    top: 25%;
+    width: 40%;
+    /* background-color: transparent; */
+    background: linear-gradient(to left, #283593, #1976d2);
+    border-radius: 25px 0 0 25px;
+    padding-left: 2%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);  /* This will produce the blur */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.diff{
+    color: rgb(238, 238, 238);
+    text-shadow: 0px 0px 2px #000000;;
+    background-color: transparent;
+}
+
+.head h1{
+    background-color: transparent;
+    font-size: 12vh;
+    text-align: left;     
+}
+
+.head h2{
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 5vh;
+    text-align: left;
+    margin-left: 1%;
+}
+
+/* .head::-webkit-scrollbar {
+    width: 12px;
+}
+
+.head::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+} */
+
+.head::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+.desc{
+    user-select: text;
+    width: 80%;
+    height: 20vh;
+    margin-left: 1%;
+    margin-top: 5%;
+    background-color: transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 2.5vh;
+}
+
+#mc{
+    position: absolute;
+    background-color: transparent;
+    z-index: 3;
+    top: 58%;
+    left: 50%;
+    height: 30%;
+    transform: translateX(-50%);
+    animation: l2r 10s linear 0s infinite;
+}
+
+#sc{
+    position: absolute;
+    background-color: transparent;
+    z-index: 4;
+    top: 68%;
+    left: 0%;
+    height: 15%;
+    transform: translateX(-100%);
+    animation: l2r2 6s linear 5s infinite reverse;
+}
+
+#road{
+    /* background-color: #ECCE82; */
+    background-color: rgb(77, 138, 15);
+    position: absolute;
+    top: 84%;
+    height: 16%;
+    width: 100%;
+    z-index: 0;
+}
+
+#roadtop{
+    color: gold;
+    font-size: 200%;
+    /* background-color: #8D6A10; */
+    background-color: rgb(109, 108, 108);
+    position: absolute;
+    border-radius: 30px 30px 0 0;
+    top: 80%;
+    height: 4%;
+    width: 100%;
+    z-index: 2;
+    border-bottom: 2px solid gold;
+    display: flex;
+}
+
+.stripe{
+    background-color: #f8f8f8;
+    width: 8%;
+    margin-left: 6%;
+    border-radius: 4px;
+    height: 25%;
+    transform: translateY(70%);
+}
+
+@keyframes l2r{
+    from{
+        transform: translateX(-650%);
+    }
+
+    to{
+        transform: translateX(600%);
+    }
+}
+
+@keyframes l2r2{
+    from{
+        transform: translateX(-550%);
+    }
+
+    to{
+        transform: translateX(1000%);
+    }
+}
+
+@keyframes sunDance{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    50%{
+        transform: rotate(150deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.rent{
+    /* background-color: rgb(240, 240, 240); */
+    background-image: url('./wbBackground.jpg');
+    transform: translateY(12vh);
+}
+
+.rentGlass{
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);  /* This will produce the blur */
+}
+
+.rt{
+    width: 70%;
+    margin-left: 15%;
+    background-color: transparent;
+}
+
+#renttext{
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    font-size: 10vh;
+    /* text-shadow: 0px 0px 5px #000000; */
+    /* transform: translateY(-72%); */
+    transform: translateY(40%);
+    font-weight: 300;
+    margin-bottom: 5%;
+}
+
+.transparent{
+    /* background-color: rgb(240, 240, 240); */
+    background-color: transparent;
+}
+
+#searchBox{
+    background-color: transparent;
+    display: flex;
+    background-color: #f8f8f8;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    width: 100%;
+    background-color: rgb(66, 111, 190);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+    margin-bottom: 5%;
+}
+
+#searchBox select,
+#searchBox input{
+    text-decoration: none;
+    border: none;
+    padding: 2px 1px;
+    height: 80%;
+    /* border: 2px 1px solid darkgray; */
+    margin: 0px;
+    border-right: 1px solid rgb(44, 82, 149);
+}
+
+#searchBox input{
+    height: 75%;
+}
+
+#from{
+    border-radius: 15% 0 0 15%;
+}
+
+#sub{
+    font-size: 3vh;
+    outline: none;
+    color: white;
+    border: 2px 2px 2px 0px solid rgb(32, 54, 93);
+    height: 80%;
+    width: 10%;
+    background-color: rgb(35, 64, 113);
+    border-radius: 0 15% 15% 0;
+    
+}
+
+#sub:hover{
+    background-color: white;
+    color: rgb(66, 111, 190);
+    border: none;
+    /* border-left: 2px solid rgb(44, 82, 149); */
+}
+
+#searchBox button{
+    border: none;
+    text-decoration: none;
+}
+
+.results{
+    width: 100%;
+    height: 47vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+    border-radius: 20px;
+}
+
+.resContainer{
+    width: 90%;
+    margin-left: 5%;
+    overflow-y: auto;
+}
+
+.res{
+    justify-content: space-around;
+    position: relative;
+    display: flex;
+    margin-top: 3vh;
+    height: 15vh;
+    width: 100%;
+    font-size: 3vh;
+    background-color: rgb(238, 238, 238);
+    padding: 8px 0px;
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+.res:hover{
+    color: white;
+    background-color: rgb(66, 111, 190);
+    transition: 0.2s;
+}
+
+.res img{
+    background-color: transparent;
+    height: 15vh;
+}
+
+.carColumns{
+    color: white;
+    padding: 0.5%;
+    padding-top: 1%;
+    display: flex;
+    background-color: rgb(35, 64, 113);
+    width: 100%;
+    justify-content: space-around;
+    height: 5vh;
+}
+
+.carColumns div{
+    background-color: transparent;
+}
+
+.carName{
+    background-color: transparent;
+    margin-top: 5.5vh;
+}
+
+.carModel{
+    background-color: transparent;
+    margin-top: 5.5vh;
+}
+
+.carPrice{
+    background-color: transparent;
+    margin-top: 5.5vh;
+}

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarLO | Rent Cars Online</title>
+  <link rel="stylesheet" href="homeA.css">
+  <link rel="stylesheet" href="location.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="stylesheet" href="ourFeatures.css">
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+
+      var listItems = document.querySelectorAll('.counter div');
+      var i1 = document.querySelector('#Num1');
+      var i2 = document.querySelector('#Num2');
+      var i3 = document.querySelector('#Num3');
+      var x1 = 0;
+      var x2 = 0;
+      var x3 = 0;
+      var y1 = 0;
+      var y2 = 0;
+      var y3 = 0;
+      var startTime = null;
+
+      var observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            startTime = performance.now();
+            requestAnimationFrame(animateNumbers);
+          }
+        });
+      });
+
+      function animateNumbers(timestamp) {
+        if (y1 < 11) {
+          if (!startTime) startTime = timestamp;
+          var progress = timestamp - startTime;
+          if (progress > 2000) progress = 2000;
+          var speedMultiplier = 1000;
+          x1 = progress * 1.2 * speedMultiplier / 100000;
+          x2 = progress * 46 * speedMultiplier / 1000;
+          x3 = progress * 0.0025 * speedMultiplier / 1000;
+          y1 = Math.ceil(x1);
+          y2 = Math.ceil(x2);
+          y3 = Math.ceil(x3);
+
+          i1.textContent = y1 + '+';
+          i2.textContent = y2 + '+';
+          i3.textContent = '#' + y3;
+
+          if (progress < 2000) {
+            requestAnimationFrame(animateNumbers);
+          }
+        } else {
+          i1.textContent = 10 + '+';
+          i2.textContent = 42069 + '+';
+          i3.textContent = '#' + 3;
+        }
+      }
+
+      listItems.forEach(function(listItem) {
+        observer.observe(listItem);
+      });
+    });
+  </script>
+</head>
+
+<body>
+
+  <div class="navbarContainer">
+    <div class="navbar">
+      <ul>
+        <img id="mainLogo" src="logo.png" />
+        <a href="#ghar">Home</a>
+        <a href="#kiraaya">Rent</a>
+        <a href="#jagaha">Locations</a>
+        <a href="#samparka">Contact Us</a>      
+        <div class="profile">
+          <% if(profImg){ %>
+            <a href="/profile">
+              <img src="<%= profImg %>" />
+            </a>
+          <% } %>
+          <% if(!profImg){ %>
+            <a href="/auth/google/">
+              <img src="profileLogo.png" />
+            </a>
+          <% } %>
+        </div>
+        </a>
+      </ul>
+    </div>
+  </div>
+
+  <section class="design" id="ghar">
+    <div class="imgs">
+      <img id="smallCloud1" class="small Cloud cloud" src="Cloud.png" height="100px" alt="Cloud" />
+      <img id="bigCloud1" class="cloud" src="Cloud.png" height="150px" alt="Cloud" />
+      <img id="Sun" src="Sun.png" height="135px" alt="Sun" />
+      <img id="smallCloud2" class="smallCloud cloud" src="Cloud.png" height="100px" alt="Cloud" />
+      <img id="bigCloud2" class="cloud" src="Cloud.png" height="150px" alt="Cloud" />
+    </div>
+
+    <div class="headContainer">
+      <div class="head">
+        <h1>
+          C<span class="diff">ar</span>LO
+        </h1>
+        <h2>
+          Car rentaL Online
+        </h2>
+        <div class="desc">
+          <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, at? Tempora tenetur dolores dignissimos, accusamus excepturi distinctio at est earum repellendus omnis totam repudiandae, minus rem optio, unde veritatis ipsam? -->
+          Welcome to CarLO, your go-to for flawless online car rentals. Explore diverse vehicles for tourism or road trips. Our unbeatable offers and exceptional curstomer service ensures a delightful travel experience. <br> Your need? CarLO does the deed.
+        </div>
+      </div>
+    </div>
+
+    <img id="mc" src="Car1.png" height="120px" alt="Car" />
+    <img id="sc" src="Car2.png" height="100px" alt="Car2" />
+
+    <div id="roadtop">
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+      <div class="stripe"></div>
+    </div>
+    <div id="road">
+
+    </div>
+  </section>
+  <section class="rent" id="kiraaya">
+    <div class="rentGlass">
+      <h1 id="renttext">Rent a Car</h1>
+      <div class="rt">
+        <div class="search transparent">
+          <form class="transparent" method="post" action="/#kiraaya">
+            <div id="searchBox">
+              <select class="searchChild" id="from" name="from">
+                <option value="">From</option>
+                <% if (locations && locations.length > 0) { %>
+                  <% locations.forEach(location => { %>
+                    <option value="<%= location.centrecity %>"><%= location.centrecity %></option>
+                  <% }); %>
+                <% } %>
+              </select>
+
+              <select class="searchChild" id="to" name="to">
+                <option value="">To</option>
+                <% if (locations && locations.length > 0) { %>
+                  <% locations.forEach(location => { %>
+                    <option value="<%= location.centrecity %>"><%= location.centrecity %></option>
+                  <% }); %>
+                <% } %>
+              </select>
+
+              <select class="searchChild" id="model" name="model">
+                <option value="">Select Model</option>
+                <option value="Any">Any</option>
+                <% if (cars && cars.length > 0) { %>
+                  <% cars.forEach(car => { %>
+                    <option value="<%= car.model %>"><%= car.model %></option>
+                  <% }); %>
+                <% } %>
+              </select>
+
+              <input class="searchChild" type="date" id="startDate" placeholder="Start Date" name="startDate">
+
+              <select class="searchChild" id="startTime" name="startTime">
+                <option value="">Start Time</option>
+              </select>
+
+              <input class="searchChild" type="date" id="endDate" placeholder="End Date" name="endDate">
+
+              <select class="searchChild" id="endTime" name="endTime">
+                <option value="">End Time</option>
+              </select>
+
+              <select class="searchChild" id="back" name="journey">
+                <option value="">Journey</option>
+                <option value="One">One-Way</option>
+                <option value="Two">Two-Way</option>
+              </select>
+
+              <button class="searchChild" id="sub" type="submit">Search</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="results">
+          <div class="carColumns">
+
+            <div class="carCol1">Image</div>
+            <div class="carCol2">Name</div>
+            <div class="carCol3">Model</div>
+            <div class="carCol4">Price</div>
+
+          </div>
+          <div class="resContainer">
+            <!-- <div class="res">
+              <img src="Swift_Dzire.png" />
+              <div class="carName">Swift Dzire</div>
+              <div class="carModel">2019</div>
+              <div class="carPrice">₹5,499</div>
+            </div>
+            <div class="res">
+              <img src="Toyota_Etios.png" />
+              <div class="carName">Etios</div>
+              <div class="carModel">2022</div>
+              <div class="carPrice">₹5,699</div>
+            </div> -->
+            <% if (msg){ %>
+              <div class="res">
+                <%= msg %>
+              </div>
+            <% } %>
+            <% if (cars && cars.length > 0 && !msg) { %>
+              <% cars.forEach(car => { %>
+                
+                  <div class="res">
+                    <a href="/payment?carNum=<%= car.num %>" style="background-color: transparent;">
+                      <img src="<%= car.imagelink %>" alt="<%= car.model %>" />
+                    </a>
+                    <div class="carName"><%= car.model %></div>
+                    <div class="carModel"><%= car.year %></div>
+                    <div class="carPrice">₹<%= car.pph*hours-1 %></div>
+                  </div>
+                
+              <% }); %>
+            <% } %>            
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </section>
+  <div class="reviews">
+    <div class="allgreen">
+      <br>
+      <h1 class="headingreviews"><strong>Hear from our Customers</strong></h1>
+      <div class="revs">
+        
+        <% reviews.map((review , idx)=>{ %>
+        <div class="reviewonebox" style="align-items: center;">
+          <div class="stardiv" style="display: flex; justify-content: center; margin-left: 0;">
+            <% let i=0; %>
+            <% for (i; i < review.starratings; i++) { %>
+              <img src="star.png" width="20px" height="20px" class="review_one_img">
+            <% } %>
+            <% for (i; i < 5; i++) { %>
+              <img src="1024px-Empty_Star.svg.png" width="20px" height="20px" class="review_one_img">
+            <% } %>
+          </div>
+          <h4 class="reviewtitle"><%= review.title %></h4>
+          <div class="review1">
+            <%= review.content %>
+          </div>
+          <img>
+          <p class="reviewonename"><%= review.username %></p>
+
+        </div>
+        <% }) %>
+      </div>
+
+    </div>
+    </section>
+    <section class="offers"></section>
+    <section class="locations" id="jagaha">
+      <div class="counter" style="position: absolute; transform: translateY(-12vh); width: 100%; background: linear-gradient(to bottom, rgb(90, 156, 255), #f8f8f8); color: white; z-index: 5; background-color: transparent;">
+        <br>
+        <div class="row1v" style="display: flex; justify-content: space-around; background-color: transparent;">
+          <p id="Num1" class="CTR">10+</p>
+          <p id="Num2" class="CTR">42069+</p>
+          <p id="Num3" class="CTR">#3</p>
+        </div>
+        <br>
+        <div class="row1v" style="display: flex; justify-content: space-around; background-color: transparent;">
+          <p id="Col1">Cities</p>
+          <p id="Col2">Customers</p>
+          <p id="Col3">Ranking</p>
+        </div>
+        <br>
+      </div>
+
+      <br>
+
+      <div class="container">
+        <h1 class="heading" style="font-family: Ubuntu; font-weight: 300; font-size: 10vh;">Our Locations</h1>
+        <div class="row1 locks rowi">
+          <% if (locations && locations.length > 0) { %>
+            <% var i=-1; %>
+            <% locations.forEach(location => { %>
+              <% i+=1 %>
+              <% if (i==4){ %>
+                <!-- Hello! -->
+              <% }; %>
+              <% if (i < 8){ %>
+                <div class="place">
+                  <div class="ite">
+                    <img src="<%= location.imagelink %>" height="150px" width="150px" class="locki" />
+                    <p class="name"><strong><%= location.centrecity %></strong></p>
+                  </div>
+                </div>
+              <% }; %>
+            <% }); %>
+          <% } %>
+          <!-- <div class="place1">
+            <img src="Ahmedabad.jpg" class="img1">
+            <p class="name1"> <strong>Ahmedabad</strong></p>
+          </div>
+          <div class="place3">
+            <img src="Chandigarh.jpg" class="img3">
+            <p class="name3"> <strong>Chandigarh</strong></p>
+          </div>
+          <div class="place2">
+            <img src="Bangalore.jpg" class="img2">
+            <p class="name2"> <strong>Bengaluru</strong></p>
+          </div>
+          <div class="place4">
+            <img src="goa.jpg" class="img4">
+            <p class="name4"> <strong>Goa</strong></p>
+          </div> -->
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="row1">
+
+
+        </div>
+
+        <br>
+        <br>
+
+      </div>
+
+    </section>
+
+    <section class="feat-offers features">
+      <div class="feat">
+          <div class="feature-heading">
+              <p class="feat-main hel">WHY <br><br> CHOOSE <br><br> US?</p>
+          </div>
+          <div class="content-1 qw">
+            <div class="img-1">
+              <img src="cont11.png">
+            </div>
+            <div class="cont-cont conta hel">
+              <h4 class="cont1-head hel">BEST SERVICE</h4>
+            <p class="cont1-cont hel">
+              We guarantee a 24/7 customer service.
+            </p>
+            </div>
+          </div>
+          <div class="content-2 qw">
+            <div class="img-1 hel">
+              <img src="offer.png" style="filter: contrast(10%); background-color: transparent;">
+            </div>
+            <div class="cont-cont contb hel">
+              <h4 class="cont1-head hel">BEST OFFERS</h4>
+            <p class="cont1-cont hel">
+              We provide the best deals, always.
+            </p>
+            </div>
+          </div>
+          <div class="content-3 qw">
+            <div class="img-1 hel">
+              <img src="thumbs.png" style="filter: contrast(10%); background-color: transparent;">
+            </div>
+            <div class="cont-cont contc hel">
+              <h4 class="cont1-head hel">BEST EXPERIENCE</h4>
+            <p class="cont1-cont hel">
+              We ensure your best experience.
+            </p>
+            </div>
+          </div>
+      </div>
+      <div class="offers">
+        <div class="container-review">
+          <h1 class="rev-head">
+            <!-- FEEDBACK -->
+            We value your feedback.
+          </h1>
+          <form id="reviewForm" id="revForm" name="rev" action="/rev" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="username" required>
+        
+            <label for="title">Title:</label>
+            <input type="text" id="email" name="title" required>
+        
+            <div class="rating">
+              <input type="hidden" id="rating" name="rating" value="5" required>
+              <label for="star5" onclick="setRating(1)" class="star">&#9733;</label>
+              <label for="star4" onclick="setRating(2)" class="star">&#9733;</label>
+              <label for="star3" onclick="setRating(3)" class="star">&#9733;</label>
+              <label for="star2" onclick="setRating(4)" class="star">&#9733;</label>
+              <label for="star1" onclick="setRating(5)" class="star">&#9733;</label>
+            </div>
+        
+            <label class="review-label" for="review">Feedback:</label>
+            <textarea id="review" name="review" rows="4" required></textarea>
+            <a href="/rev"><input type="submit" value="Submit"></a>
+        </form>
+        </div>
+      </div>     
+  </section>
+
+    <!-- <div class="contact" style="background: linear-gradient(to bottom, rgb(90, 156, 255), rgb(66, 111, 190));"> -->
+    <div class="contact" id="samparka" style="background: linear-gradient(to bottom, rgb(90, 156, 255), rgb(66, 111, 190));">
+      <br>
+      <h1 id="ConTitle">Contact Us</h1>
+      <br>
+      <br>
+      <div id="ConMain">
+        <div id="ConLeft">
+          <br>
+          <img class="ConLogo" src="Call.png" alt="Phone Icon" height="90px" />
+          <br>
+          <div class="ConDetails">
+            <br>
+            <h2>Phone</h2>
+            <br>
+            <p>+1 (123) 456-7890</p>
+          </div>
+        </div>
+        <div id="ConMid">
+          <br>
+          <img class="ConLogo" src="Mail.png" alt="Email Icon" height="90px" />
+          <br>
+          <div class="ConDetails">
+            <br>
+            <h2>Email</h2>
+            <br>
+            <p>info@carlorental.com</p>
+          </div>
+        </div>
+        <div id="ConRight">
+          <br>
+          <img class="ConLogo" src="Maps.png" alt="Location Icon" height="90px" />
+          <br>
+          <div class="ConDetails">
+            <br>
+            <h2>Location</h2>
+            <br>
+            <p>123 Main St, City, Country</p>
+          </div>
+        </div>
+        <div id="ConPrivacy">
+          <br>
+          <img class="ConLogo" src="pngtree-privacy-policy-png-image_6290271.png" alt="Location Icon" height="90px" />
+          <br>
+          <div class="ConDetails">
+            <br>
+            <h2>Privacy Policy</h2>
+            <br>
+            <p>123 Main St, City, Country</p>
+          </div>
+        </div>
+        <div id="ConReview">
+          <br>
+          <img class="ConLogo" src="Logo_review_analytics_rgb-vertical-wikipedia.png" alt="Location Icon" height="90px" />
+          <br>
+          <div class="ConDetails">
+            <br>
+            <h2>Review</h2>
+            <br>
+            <p>123 Main St, City, Country</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div id="footerDetails">
+        <h3>CarLO Rental</h3>
+        <p>&copy; 2023 CarLO Rental. All rights reserved.</p>
+      </div>
+    </footer>
+
+  </div>
+
+
+  <script>
+    function setRating(value) {
+      document.getElementById('rating').value = value;
+
+     
+      for (let i = 1; i <= 5; i++) {
+        const star = document.getElementById('star' + i);
+        star.style.color = 'gold';
+      }
+
+      for (let i = 1; i <= value; i++) {
+        const star = document.getElementById('star' + i);
+        star.style.color = 'black';
+      }
+    }
+
+    function generateTimeOptions(selectId) {
+      const select = document.getElementById(selectId);
+
+      for (let hour = 0; hour < 24; hour++) {
+        let formattedHour = hour < 10 ? '0' + hour : hour.toString()
+
+        const option = document.createElement('option');
+        option.value = formattedHour + ':00';
+        option.textContent = formattedHour + ':00';
+        select.appendChild(option);
+      }
+    }
+
+    generateTimeOptions('startTime');
+    generateTimeOptions('endTime');
+  </script>
+
+</body>
+
+</html>

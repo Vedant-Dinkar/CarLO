@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | CarLO</title>
+    <link rel="stylesheet" href="cssfiles.css">
+    <style>
+        *{
+            margin: 0;
+            font-family: Ubuntu;
+        }
+
+        body{
+            overflow-y: hidden;
+            background-image: url('log.jpeg');
+            height : 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .navbar{
+            background-color: rgb(35, 64, 113);
+            height: 12vh;
+            width: 100%;
+            top: 0;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        #mainLogo{
+            position: absolute;
+            transform: translate(-50%, -50%);
+            height: 50px;
+            top: 50%;
+            background-color: transparent;
+        }
+
+        ul{
+            display: flex;
+            top: 40%;
+            background-color: transparent;
+            position: relative;
+            justify-content: space-between;
+        }
+
+        ul a{
+            background-color: transparent;
+            margin: 0 10%;
+            text-decoration: none;
+            color: white;
+        }
+
+        ul a:hover{
+            color: aqua;
+        }
+
+        .profile{
+            overflow: hidden;
+            height: 50px;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 20px;
+            background-color: transparent;
+        }
+
+        .profile img{
+            border-radius: 50%;
+            height: 50px;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="navbarContainer">
+            <div class="navbar">
+                <ul>
+                    <img id="mainLogo" src="logo.png" />
+                    <a href="">Home</a>
+                    <a href="">Rent</a>
+                    <a href="">Locations</a>
+                    <a href="">Contact Us</a>
+                    <div class="profile">
+                        <img src="profileLogo.png" />
+                    </div>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="login-box">
+            <div class="box-title">
+                <p class="title-text">
+                    Login
+                </p>
+            </div>
+            <form class="formbox" action="./" method="post">
+                <div class="form-items">
+                    <label for="username" class="username"> Username</label>
+                    <input type="text" class="namebox  namebox-error"  name="username" id="username" placeholder="Enter your username">
+                    <span class="error-name">Try Again</span>
+                    <label for="paascode" class="pass"> Password</label>
+                    <input type="password" class="user-pass  user-pass-error" name="passcode" id="passcode" placeholder="Enter your password">
+                    <span class="error-pass">Wrong password</span>
+                </div>
+            </form> 
+            <div class="logs">
+                <button class="log-button">
+                    Login
+                </button>
+                <br>
+                <a href="/auth/google" style="text-decoration: none;">
+                    <button class="log-button" style="display: flex; align-items: center;">
+                        Login using <img src="google.png" height="15px" />
+                    </button>
+                </a>
+            </div>
+            <!-- <button class="sign-in-button">
+                Sign In
+            </button> -->
+            <p style="text-align: center; color: white" class="sign-in-para"> Don't have an account? Sign-in <a href="./sign.html" style="color: rgb(102, 102, 232);">here</a> </p>
+        </div>     
+    </section>   
+</body>
+</html>

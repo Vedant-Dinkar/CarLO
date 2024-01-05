@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    font-family: 'Ubuntu';
+}
+
+body{
+    overflow-y: hidden;
+}
+
+.navbar{
+    background-color: rgb(35, 64, 113);
+    height: 12vh;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+#mainLogo{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    top: 50%;
+    background-color: transparent;
+}
+
+ul{
+    display: flex;
+    top: 40%;
+    background-color: transparent;
+    position: relative;
+    justify-content: space-between;
+}
+
+ul a{
+    background-color: transparent;
+    margin: 0 10%;
+    text-decoration: none;
+    color: white;
+}
+
+ul a:hover{
+    color: aqua;
+}
+
+.profile{
+    overflow: hidden;
+    height: 50px;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 20px;
+    background-color: transparent;
+}
+
+.profile img{
+    border-radius: 50%;
+    height: 50px;
+    background-color: transparent;
+}
+
+.user{
+    margin-top: 14vh;
+    height: 30vh;
+    width: 175vh;
+    background-color: rgb(35, 64, 113);
+    border-radius: 20px;
+    display: flex;
+    flex-flow: row;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.user-image{
+    height:26vh;
+    width: 26vh;
+    background-color: blue;
+    margin-left: 10vh;
+    margin-top: 2vh;
+    border-radius: 50%;
+}
+
+.user-im{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px 2px rgba(119, 119, 119, 0.75);
+}
+
+.user-info{
+    user-select: none;
+    width:120vh;
+    height: 100%;
+    margin-left: 10vh;
+    background-color: rgb(255, 255, 223);
+    padding: 5vh;
+    display: flex;
+    flex-flow: column;
+    font-size: 30px;
+    font-weight: normal;
+    border: 20px;
+    border-color: rgb(255, 255, 217);
+}
+
+.user-info-text{
+    margin-top: 20px;
+}
+
+.booking{
+    margin-top: 4vh;
+    height: 50vh;
+    width: 175vh;
+    background-color: rgb(250, 250, 206);
+    border-radius: 20px;
+    display: flex;
+    flex-flow: column;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+}
+
+.booking-heading{
+    margin-top: 0;
+    width: 100%;
+    height: 10vh;
+    /* border-radius: 20px 20px 0px 0px; */
+    background-color: rgb(35, 64, 113);
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+.dat{
+    margin-top: 3.5vh;
+    font-size: 2.6vh;
+}
+
+.main{
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+}
+
+.booking-content{
+    overflow-y: auto;
+    background-color: rgb(250, 250, 206);
+}
+
+
+.res{
+    position: relative;
+    display: flex;
+    margin-top: 3vh;
+    margin-left: 1vh;
+    height: 15vh;
+    width: 99%;
+    font-size: 3vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    transition: 0.2s;
+}
+
+.res:hover{
+    color: white;
+    background-color: rgb(49, 101, 190);
+    transition: 0.2s;
+}
+
+.res-id{
+    margin-left: 9vh;
+}
+
+.res img{
+    background-color: transparent;
+    height: 15vh;
+    margin-left: 11vh;
+}
+
+ .res1{
+    margin-top: 5.5vh;
+    font-size: 2.15vh;
+}
+
+.res-start{
+    margin-left: 9vh;
+}
+
+.res-end{
+    margin-left: 12vh;
+}
+
+.res-from{
+    margin-left: 16vh;
+}
+
+.res-to{
+    margin-left: 18vh;
+}
+
+.res-amount{
+    margin-left: 20vh;
+} 
+
+
