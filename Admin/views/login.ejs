@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./static/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <script>
+        function show() {
+            var x = document.getElementById("password");
+            var y = document.getElementById("pa");
+
+            if (x.type === "password") {
+                x.type = "text";
+                y.src = "./static/Hide.png";
+            } else {
+                x.type = "password";
+                y.src = "./static/Show.png";
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            font-family: Ubuntu;
+        }
+
+        body {
+            overflow-y: hidden;
+            /* background-image: url('./static/log.jpeg'); */
+            background-image: url('./static/vivid-blurred-colorful-wallpaper-background_58702-3771.avif');
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .navbar {
+            background-color: rgb(35, 64, 113);
+            height: 12vh;
+            width: 100%;
+            top: 0;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        #mainLogo {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            height: 50px;
+            top: 50%;
+            background-color: transparent;
+        }
+
+        ul {
+            display: flex;
+            top: 40%;
+            background-color: transparent;
+            position: relative;
+            justify-content: space-between;
+        }
+
+        ul a {
+            background-color: transparent;
+            margin: 0 10%;
+            text-decoration: none;
+            color: white;
+        }
+
+        ul a:hover {
+            color: aqua;
+        }
+
+        .profile {
+            overflow: hidden;
+            height: 50px;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 20px;
+            background-color: transparent;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            height: 50px;
+            background-color: transparent;
+        }
+
+        .orange-overlay {
+            /* background: #e07523; */
+            background-color: transparent;
+            position: absolute;
+            border: 1px solid transparent;
+            left: 80%;
+            bottom: 8.5%;
+            transform: translateY(-625%);
+            display: inline-block;
+        }
+
+        .orange-overlay:hover {
+            color: white;
+        }
+
+        .orange-overlay img {
+            background-color: transparent;
+            color: black;
+            display: block;
+            max-width: 100%;
+            height: auto;
+            /* filter: brightness(0) invert(1) sepia(1) saturate(100) hue-rotate(30deg); */
+            /*filter: invert(0) sepia(1) saturate(100) hue-rotate(310deg);*/
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+
+        <div class="navbarContainer">
+            <div class="navbar">
+                <ul>
+                    <img id="mainLogo" src="/static/logo.png" />
+                    <h1 style="margin-left: 75%; color: white">CarLO Admin Portal</h1>
+                    <div class="profile">
+                        <!-- <img src="/static/profileLogo.png" /> -->
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+        <div class="login-box">
+            <br>
+            <br>
+            <div class="box-title">
+                <p class="title-text">
+                    Admin Log In
+                </p>
+
+                <div>
+                    <ul class="FlashErrorMessages">
+                        <% if (typeof errors !='undefined' ) { %>
+                            <% errors.forEach(error=> { %>
+                                <li>
+                                    <%= error.message %>
+                                </li>
+                                <% }) %>
+                                    <% } %>
+                    </ul>
+
+                    <ul class="FlashErrorMessages">
+                        <% if(messages.success_msg) { %>
+                            <li>
+                                <%= messages.success_msg %>
+                            </li>
+                            <% } %>
+                    </ul>
+
+                    <ul class="FlashErrorMessages">
+                        <% if (messages.error) { %>
+                            <li>
+                                <%= messages.error %>
+                            </li>
+                            <% } %>
+                    </ul>
+                </div>
+
+            </div>
+            <form class="formbox" action="/login" method="post">
+
+
+                <div class="form-items">
+                    <label for="username" class="username">Email</label>
+                    <input type="text" class="namebox  namebox-error" name="email" id="email"
+                        placeholder="Enter your email">
+                    <!-- <span class="error-name">Try Again</span> -->
+                    <label for="paascode" class="pass"> Password</label>
+                    <input type="password" class="user-pass  user-pass-error" name="password" id="password"
+                        placeholder="Enter your password">
+                    <!-- <span class="error-pass">Wrong password</span> -->
+                </div>
+                <div class="logs">
+                    <input type="submit" value="Log In" class="log-button">
+                    <br>
+                    <!-- <button class="log-button usinggoogle" style="align-items: center;">
+                        Login using <img src="./static/google.png" height="15px" class="google" />
+                    </button> -->
+                </div>
+            </form>
+            <button alt="Show/Hide Password" class="orange-overlay" onclick='show()'><img id="pa"
+                    src="./static/Show.png" width="20vh" /></button>
+            <!-- <p style="color: white ;font-weight: 550;text-align: center; margin-top: 9%;">Don't have an account? <a
+                    href="signin">Sign In</a></a></p> -->
+        </div>
+    </section>
+</body>
+
+</html>

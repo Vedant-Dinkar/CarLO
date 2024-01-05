@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="./static/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <script>
+        // function show(){
+        //     var x=document.getElementById("password");
+        //     var y=document.getElementById("pa");
+
+        //     if (x.type === "password") {
+        //         x.type = "text";
+        //         y.src="./static/Hide.png";
+        //     } else {
+        //         x.type = "password";
+        //         y.src="./static/Show.png";
+        //     }
+        // }
+        // function show(){
+        //     var x=document.getElementById("password2");
+        //     var y=document.getElementById("pa");
+
+        //     if (x.type === "password") {
+        //         x.type = "text";
+        //         y.src="./static/Hide.png";
+        //     } else {
+        //         x.type = "password";
+        //         y.src="./static/Show.png";
+        //     }
+        // }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            font-family: Ubuntu;
+        }
+
+        body {
+            overflow-y: hidden;
+            background-image: url('./static/vivid-blurred-colorful-wallpaper-background_58702-3771.avif');
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .navbar {
+            background-color: rgb(35, 64, 113);
+            height: 12vh;
+            width: 100%;
+            top: 0;
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        #mainLogo {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            height: 50px;
+            top: 50%;
+            background-color: transparent;
+        }
+
+        ul {
+            display: flex;
+            top: 40%;
+            background-color: transparent;
+            position: relative;
+            justify-content: space-between;
+        }
+
+        ul a {
+            background-color: transparent;
+            margin: 0 10%;
+            text-decoration: none;
+            color: white;
+        }
+
+        ul a:hover {
+            color: aqua;
+        }
+
+        .profile {
+            overflow: hidden;
+            height: 50px;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 20px;
+            background-color: transparent;
+        }
+
+        .profile img {
+            border-radius: 50%;
+            height: 50px;
+            background-color: transparent;
+        }
+
+        .orange-overlay {
+            /* background: #e07523; */
+            background-color: transparent;
+            position: absolute;
+            border: 1px solid transparent;
+            left: 80%;
+            bottom: 22.5%;
+            transform: translateY(-675%);
+            display: inline-block;
+        }
+
+        .orange-overlay:hover {
+            color: white;
+        }
+
+        .orange-overlay img {
+            background-color: transparent;
+            color: black;
+            display: block;
+            max-width: 100%;
+            height: auto;
+            /* filter: brightness(0) invert(1) sepia(1) saturate(100) hue-rotate(30deg); */
+            /*filter: invert(0) sepia(1) saturate(100) hue-rotate(310deg);*/
+        }
+    </style>
+    <script>
+        // JavaScript to handle the file input change event
+        document.getElementById('uploadInput').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            const imagePreview = document.getElementById('imagePreview');
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // Create an img element
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+
+                    // Clear any previous preview and append the new img element
+                    imagePreview.innerHTML = '';
+                    imagePreview.appendChild(img);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div class="navbarContainer">
+        <div class="navbar">
+            <ul>
+                <img id="mainLogo" src="./static/logo.png" />
+                <a href="">Home</a>
+                <a href="">Rent</a>
+                <a href="">Locations</a>
+                <a href="">Contact Us</a>
+                <div class="profile">
+                    <img src="./static/profileLogo.png" />
+                </div>
+            </ul>
+        </div>
+
+
+    </div>
+    <section>
+
+        <div class="signin-box">
+            <br>
+            <br>
+            <div class="box-title" style="margin-left: 25%;">
+                <p class="title-text" style="font-size: 25px;">
+                    Sign In
+                </p>
+                <div>
+                    <ul class="FlashErrorMessages">
+                        <% if (typeof errors !='undefined' ) { %>
+                            <% errors.forEach(error=> { %>
+                                <li>
+                                    <%= error.message %>
+                                </li>
+                                <% }) %>
+                                    <% } %>
+                                        <br>
+                    </ul>
+                </div>
+            </div>
+            <form class="formbox" action="/signin" method="post">
+                <div class="form-items form-items-signin">
+                    <div class="form-items form-items-left">
+                        <label for="username" class="username"> Username</label>
+                        <input type="text" class="namebox  namebox-error" name="name" id="name"
+                            placeholder="Enter your username">
+                        <!-- <span class="error-name">Try Again</span> -->
+                        <label for="email" class="username"> Email</label>
+                        <input type="text" class="namebox  namebox-error" name="email" id="email"
+                            placeholder="Enter your email">
+                        <label for="password" class="pass"> Password</label>
+                        <input type="password" class="user-pass  user-pass-error" name="password" id="password"
+                            placeholder="Enter your password">
+                        <!-- <span class="error-pass">Wrong password</span> -->
+                        <label for="password2" class="pass"> Confirm your Password</label>
+                        <input type="password" class="user-pass  user-pass-error" name="password2" id="password2"
+                            placeholder="Confirm your password">
+                    </div>
+                    <div class="form-items form-items-right">
+                        <label for="image" class="pass"> Upload your profile image</label>
+                        <input type="file" class="user-pass  user-pass-errorv user-pass-image" name="image"
+                            accept="image/*" placeholder="image">
+                        <div class="logs">
+                            <input type="submit" value="Sign In" class="log-button log-button-signin">
+                            <p
+                                style="color: white ;font-weight: 550;text-align: center; margin-top: 9%; margin-left: 30px;">
+                                Already have an account? <a href="login">Log In</a></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- <button alt="Show/Hide Password" class="orange-overlay" onclick='show()'><img id="pa" src="./static/Show.png" width="20vh"/></button>
+            <button alt="Show/Hide Password" class="orange-overlay" onclick='show()'><img id="pa" src="./static/Show.png" width="20vh"/></button> -->
+        </div>
+    </section>
+</body>
+
+</html>

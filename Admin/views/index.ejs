@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarLO | Rent Cars Online</title>
+    <link rel="stylesheet" href="./static/homeA.css">
+    <link rel="stylesheet" href="./static/location.css">
+    <link rel="stylesheet" href="./static/contact.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          var w = window.innerWidth;
+          var h = window.innerHeight;
+
+          var listItems = document.querySelectorAll('.counter div');
+          var i1 = document.querySelector('#Num1');
+          var i2 = document.querySelector('#Num2');
+          var i3 = document.querySelector('#Num3');
+          var x1 = 0;
+          var x2 = 0;
+          var x3 = 0;
+          var y1 = 0;
+          var y2 = 0;
+          var y3 = 0;
+          var startTime = null;
+      
+          var observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                startTime = performance.now();
+                requestAnimationFrame(animateNumbers);
+              }
+            });
+          });
+      
+          function animateNumbers(timestamp) {
+            if(y1<11){  
+              if (!startTime) startTime = timestamp;
+              var progress = timestamp - startTime;
+              if (progress > 2000) progress = 2000;
+              var speedMultiplier = 1000; 
+              x1 = progress*1.2*speedMultiplier/100000;
+              x2 = progress*46*speedMultiplier/1000;
+              x3 = progress*0.0025*speedMultiplier/1000;
+              y1 = Math.ceil(x1);
+              y2 = Math.ceil(x2);
+              y3 = Math.ceil(x3);
+      
+              i1.textContent = y1 + '+';
+              i2.textContent = y2 + '+';
+              i3.textContent = '#' + y3;
+      
+              if (progress < 2000) {
+                  requestAnimationFrame(animateNumbers);
+              }
+            }
+            else{
+              i1.textContent = 10 + '+';
+              i2.textContent = 42069 + '+';
+              i3.textContent = '#' + 3;
+            }
+          }
+      
+          listItems.forEach(function(listItem) {
+            observer.observe(listItem);
+          });
+        });
+    </script> 
+</head>
+<body>
+
+    <div class="navbarContainer">
+        <div class="navbar">
+            <ul>
+                <img id="mainLogo" src="./static/logo.png" />
+                <a href="">Home</a>
+                <a href="">Rent</a>
+                <a href="">Locations</a>
+                <a href="">Contact Us</a>
+                <div class="profile">
+                    <img src="./static/profileLogo.png" />
+                </div>
+            </ul>
+        </div>
+
+        
+    </div>
+
+    <section class="design">
+        <div class="imgs">
+            <img id="smallCloud1" class="small Cloud cloud" src="./static/Cloud.png" height="100px" alt="Cloud" />
+            <img id="bigCloud1" class="cloud" src="./static/Cloud.png" height="150px" alt="Cloud" /> 
+            <img id="Sun" src="./static/Sun.png" height="135px" alt="Sun" />
+            <img id="smallCloud2" class="smallCloud cloud" src="./static/Cloud.png" height="100px" alt="Cloud" />
+            <img id="bigCloud2" class="cloud" src="./static/Cloud.png" height="150px" alt="Cloud" />         
+        </div>
+
+        <div class="headContainer">
+            <div class="head">
+                <h1>
+                    C<span class="diff">ar</span>LO
+                </h1>
+                <h2>
+                    Car rentaL Online
+                </h2>
+                <div class="desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, at? Tempora tenetur dolores dignissimos, accusamus excepturi distinctio at est earum repellendus omnis totam repudiandae, minus rem optio, unde veritatis ipsam?
+                </div>
+            </div>
+        </div>
+       
+        <img id="mc" src="./static/Car1.png" height="120px" alt="Car" />
+        <img id="sc" src="./static/Car2.png" height="100px" alt="Car2" />
+
+        <div id="roadtop">
+            <div class="stripe"></div>
+            <div class="stripe"></div>  
+            <div class="stripe"></div>  
+            <div class="stripe"></div>  
+            <div class="stripe"></div>  
+            <div class="stripe"></div>  
+            <div class="stripe"></div>         
+        </div>
+        <div id="road">
+    
+        </div>
+    </section>
+    <section class="rent">
+        <div class="rentGlass">
+            <h1 id="renttext">Rent a Car</h1>
+            <div class="rt">
+                <div class="search transparent">
+                    <form class="transparent">
+                        <div id="searchBox">
+                            <select class="searchChild" id="from">
+                                <option value="">From</option>
+                                <option value="New Delhi">New Delhi</option>
+                                <option value="Indore">Indore</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Gwalior">Gwalior</option>
+                                <option value="Bhopal">Bhopal</option>
+                            </select>
+
+                            <select class="searchChild" id="to">
+                                <option value="">To</option>
+                                <option value="New Delhi">New Delhi</option>
+                                <option value="Indore">Indore</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Gwalior">Gwalior</option>
+                                <option value="Bhopal">Bhopal</option>
+                            </select>
+
+                            <select class="searchChild" id="model">
+                                <option value="">Select Model</option>
+                                <option value="Any">Any</option>
+                                <option value="Swift Dzire">Swift Dzire</option>
+                                <option value="Amaze">Honda Amaze</option>
+                                <option value="Go">Datsun Go</option>
+                                <option value="Innova">Toyota Innova</option>
+                                <option value="Rolls Royce">Rolls Royce</option>
+                                <option value="Trezor">Renault Trezor</option>
+                            </select>
+        
+                            <input class="searchChild" type="date" id="startDate" placeholder="Start Date">
+        
+                            <select class="searchChild" id="startTime">
+                                <option value="">Start Time</option>
+                            </select>
+        
+                            <input class="searchChild" type="date" id="endDate" placeholder="End Date">
+        
+                            <select class="searchChild" id="endTime">
+                                <option value="">End Time</option>
+                            </select>
+        
+                            <select class="searchChild" id="back">
+                                <option value="">Journey</option>
+                                <option value="One">One-Way</option>
+                                <option value="Two">Two-Way</option>
+                            </select>
+        
+                            <button class="searchChild" id="sub" type="submit">Search</button>
+                        </div>
+                    </form>
+                </div>
+                <a href="booking">booking</a>
+                <div class="results">
+                    <div class="carColumns">
+                        
+                            <div class="carCol1">Image</div>
+                            <div class="carCol2">Name</div>
+                            <div class="carCol3">Model</div>
+                            <div class="carCol4">Price</div>
+
+                    </div>
+                    <div class="resContainer">
+                        <div class="res">
+                            <img src="./static/Swift_Dzire.png" />
+                            <div class="carName">Swift Dzire</div>
+                            <div class="carModel">2019</div>
+                            <div class="carPrice">₹5,499</div>
+                        </div>
+                        <div class="res">
+                            <img src="./static/Toyota_Etios.png" />
+                            <div class="carName">Etios</div>
+                            <div class="carModel">2022</div>
+                            <div class="carPrice">₹5,699</div>
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </div>
+        <br>
+    </section>
+    
+    <div class="reviews">
+        <div class="allgreen"> 
+            <br>
+            <h1 class="headingreviews"><strong>Hear from our Customers</strong></h1>
+            <div class="revs">    
+            
+            <div class="reviewonebox">
+                <div class="stardiv"><img src="static/5star.png" class="review_one_img"></div>
+                <h4 class="reviewtitle">review title</h4>
+                <div class="review1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                     Lorem Ipsum has been the industry's standard dummy text ev
+                     er since the 1500s, when an unknown printer took a galley of type and scrambled it t
+                     o make a type specimen book. It has survived not only five centuries, but also the le
+                     ap into electronic typesetting, remaining essentially unchanged. It was popularised in 
+                     the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
+                     recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                </div>
+                <img>
+                <p class="reviewonename">name of the person</p>
+                <p class="review_one_occ">occupation</p>
+               
+            </div>
+            <div class="reviewonebox">
+                <div class="stardiv"><img src="static/5star.png" class="review_one_img"></div>
+                <h4 class="reviewtitle">review title</h4>
+                <div class="review1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                     Lorem Ipsum has been the industry's standard dummy text ev
+                     er since the 1500s, when an unknown printer took a galley of type and scrambled it t
+                     o make a type specimen book. It has survived not only five centuries, but also the le
+                     ap into electronic typesetting, remaining essentially unchanged. It was popularised in 
+                     the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
+                     recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                </div>
+                <img>
+                <p class="reviewonename">name of the person</p>
+                <p class="review_one_occ">occupation</p>
+                
+            </div>
+            <div class="reviewonebox">
+                <div class="stardiv"><img src="static/5star.png" class="review_one_img"></div>
+                <h4 class="reviewtitle">review title</h4>
+                <div class="review1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                     Lorem Ipsum has been the industry's standard dummy text ev
+                     er since the 1500s, when an unknown printer took a galley of type and scrambled it t
+                     o make a type specimen book. It has survived not only five centuries, but also the le
+                     ap into electronic typesetting, remaining essentially unchanged. It was popularised in 
+                     the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
+                     recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                </div>
+                <img>
+                <p class="reviewonename">name of the person</p>
+                <p class="review_one_occ">occupation</p>
+                
+            </div>
+            <div class="reviewonebox">
+                <div class="stardiv"><img src="static/5star.png" class="review_one_img"></div>
+                <h4 class="reviewtitle">review title</h4>
+                <div class="review1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                     Lorem Ipsum has been the industry's standard dummy text ev
+                     er since the 1500s, when an unknown printer took a galley of type and scrambled it t
+                     o make a type specimen book. It has survived not only five centuries, but also the le
+                     ap into electronic typesetting, remaining essentially unchanged. It was popularised in 
+                     the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
+                     recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                </div>
+                <img>
+                <p class="reviewonename">name of the person</p>
+                <p class="review_one_occ">occupation</p>
+                
+            </div>
+            <div class="reviewonebox">
+                <div class="stardiv"><img src="static/5star.png" class="review_one_img"></div>
+                <h4 class="reviewtitle">review title</h4>
+                <div class="review1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                     Lorem Ipsum has been the industry's standard dummy text ev
+                     er since the 1500s, when an unknown printer took a galley of type and scrambled it t
+                     o make a type specimen book. It has survived not only five centuries, but also the le
+                     ap into electronic typesetting, remaining essentially unchanged. It was popularised in 
+                     the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
+                     recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                </div>
+                <img>
+                <p class="reviewonename">name of the person</p>
+                <p class="review_one_occ">occupation</p>
+                
+            </div>
+            <div class="reviewonebox">
+                <div class="stardiv"><img src="static/5star.png" class="review_one_img"></div>
+                <h4 class="reviewtitle">review title</h4>
+                <div class="review1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                     Lorem Ipsum has been the industry's standard dummy text ev
+                     er since the 1500s, when an unknown printer took a galley of type and scrambled it t
+                     o make a type specimen book. It has survived not only five centuries, but also the le
+                     ap into electronic typesetting, remaining essentially unchanged. It was popularised in 
+                     the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more 
+                     recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                </div>
+                <img>
+                <p class="reviewonename">name of the person</p>
+                <p class="review_one_occ">occupation</p>
+                
+            </div>
+
+            </div>
+            
+        </div>
+    </section>
+    <section class="features"></section>
+    <section class="offers"></section>
+    <section class="locations">
+        <div class="counter" style="position: absolute; transform: translateY(-12vh); width: 100%; background: linear-gradient(to bottom, rgb(90, 156, 255), #f8f8f8); color: white; z-index: 5; background-color: transparent;">
+            <br>
+            <div class="row1v" style="display: flex; justify-content: space-around; background-color: transparent;">
+                <p id="Num1" class="CTR">10+</p>
+                <p id="Num2" class="CTR">42069+</p>
+                <p id="Num3" class="CTR">#3</p>
+            </div>
+            <br>
+            <div class="row1v" style="display: flex; justify-content: space-around; background-color: transparent;">
+                <p id="Col1">Cities</p>
+                <p id="Col2">Customers</p>
+                <p id="Col3">Ranking</p>
+            </div>
+            <br>
+        </div>
+
+        <br>
+
+        <div class="container">
+            <h1 class ="heading" style="font-family: Ubuntu; font-weight: 300; font-size: 10vh;">Our Locations</h1>
+            <div class="row1">
+                <div class="place1">
+                    <img src="static/Ahmedabad.jpg" class="img1">
+                    <p class="name1"> <strong>Ahmedabad</strong></p>
+                </div>
+                <div class="place3">
+                    <img src="static/Chandigarh.jpg" class="img3">
+                    <p class="name3"> <strong>Chandigarh</strong></p>
+                </div>
+                <div class="place2">
+                    <img src="static/Bangalore.jpg" class="img2">
+                    <p class="name2"> <strong>Bengaluru</strong></p>
+                </div>
+                <div class="place4">
+                    <img src="static/goa.jpg" class="img4">
+                    <p class="name4"> <strong>Goa</strong></p>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <div class="row1">
+                <div class="place1">
+                    <img src="static/indore.jpg" class="img1">
+                    <p class="name1"> <strong>Indore</strong></p>
+                </div>
+                <div class="place3">
+                    <img src="static/jaipur.jpg" class="img3">
+                    <p class="name3"> <strong>Jaipur</strong></p>
+                </div>
+                <div class="place2">
+                    <img src="static/kolkata.jpg" class="img2">
+                    <p class="name2"> <strong>Kolkata</strong></p>
+                </div>
+                <div class="place4">
+                    <img src="static/mumbai.jpg" class="img4">
+                    <p class="name4"> <strong>Mumbai</strong></p>
+                </div>
+
+                
+            </div>
+            
+            <br>
+            <br>
+
+        </div>
+        
+    </section>
+
+    <!-- <div class="contact" style="background: linear-gradient(to bottom, rgb(90, 156, 255), rgb(66, 111, 190));"> -->
+    <div class="contact" style="background: linear-gradient(to bottom, rgb(90, 156, 255), rgb(66, 111, 190));">
+        <br>
+        <h1 id="ConTitle">Contact Us</h1>
+        <br>
+        <br>
+        <div id="ConMain">
+            <div id="ConLeft">
+                <br>
+                <img class="ConLogo" src="./static/Call.png" alt="Phone Icon" height="90px" />
+                <br>
+                <div class="ConDetails">
+                    <br>
+                    <h2>Phone</h2>
+                    <br>
+                    <p>+1 (123) 456-7890</p>
+                </div>
+            </div>
+            <div id="ConMid">
+                <br>
+                <img class="ConLogo" src="./static/Mail.png" alt="Email Icon" height="90px" />
+                <br>
+                <div class="ConDetails">
+                    <br>
+                    <h2>Email</h2>
+                    <br>
+                    <p>info@carlorental.com</p>
+                </div>
+            </div>
+            <div id="ConRight">
+                <br>
+                <img class="ConLogo" src="./static/Maps.png" alt="Location Icon" height="90px" />
+                <br>
+                <div class="ConDetails">
+                    <br>
+                    <h2>Location</h2>
+                    <br>
+                    <p>123 Main St, City, Country</p>
+                </div>
+            </div>
+            <div id="ConPrivacy">
+                <br>
+                <img class="ConLogo" src="./static/pngtree-privacy-policy-png-image_6290271.png" alt="Location Icon" height="90px" />
+                <br>
+                <div class="ConDetails">
+                    <br>
+                    <h2>Privacy Policy</h2>
+                    <br>
+                    <p>123 Main St, City, Country</p>
+                </div>
+            </div>
+            <div id="ConReview">
+                <br>
+                <img class="ConLogo" src="./static/Logo_review_analytics_rgb-vertical-wikipedia.png" alt="Location Icon" height="90px" />
+                <br>
+                <div class="ConDetails">
+                    <br>
+                    <h2>Review</h2>
+                    <br>
+                    <p>123 Main St, City, Country</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div id="footerDetails">
+            <h3>CarLO Rental</h3>
+            <p>&copy; 2023 CarLO Rental. All rights reserved.</p>
+        </div>
+    </footer>
+        
+    </div>
+    
+
+    <script>
+        function generateTimeOptions(selectId) {
+            const select = document.getElementById(selectId);
+
+            for(let hour=0; hour<24; hour++){
+                let formattedHour = hour < 10 ? '0' + hour : hour.toString()
+
+                const option = document.createElement('option');
+                option.value = formattedHour + ':00';
+                option.textContent = formattedHour + ':00';
+                select.appendChild(option);
+            }
+        }
+
+        generateTimeOptions('startTime');
+        generateTimeOptions('endTime');
+    </script>
+    <a href="/logout">Logout</a>
+</body>
+</html>

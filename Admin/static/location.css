@@ -1,0 +1,189 @@
+.reviews{
+    height: 88vh !important;
+    margin-top: 12vh;
+}
+
+.heading{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.container{
+    background-color: #f8f8f8;
+    
+}
+
+.img1{
+    width: 150px;
+    border-radius: 150px;
+}
+
+.place1{
+    display: inline-block;
+    margin-right:80px;
+    margin-left: 100px;
+}
+
+.name1{
+    text-align: center;
+    font-size:20px;
+}
+
+.place1:hover {
+    border-width: 2px;
+    border-color: black;   
+}
+
+.img2{
+    width: 150px;
+    border-radius: 150px;
+}
+
+.place2{
+    display: inline-block;
+    margin-right:80px;
+    
+}
+
+.name2{
+    text-align: center;
+    font-size:20px;
+}
+.img3{
+    width: 150px;
+    border-radius: 150px;
+}
+.place3{
+    display: inline-block;
+    margin-right:80px;
+    
+}
+.name3{
+    text-align: center;
+    font-size:20px;
+}
+.img4{
+    width: 150px;
+    border-radius: 150px;
+}
+
+.place4{
+    display: inline-block;
+    margin-right:80px;
+    
+}
+
+.name4{
+    text-align: center;
+    font-size:20px;
+}
+
+.img5{
+    width: 150px;
+    border-radius: 150px;
+}
+
+.place5{
+    display:inline-block;
+    
+}
+
+.name5{
+    text-align: center;
+    font-size:20px;
+}
+
+.row1{
+    padding-left:100px;
+}
+
+::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+.allgreen{
+    background-color: rgb(90, 156, 255);
+    padding-left:40px;
+
+}
+.headingreviews{
+    text-align: center;
+    margin-bottom:40px;
+    background-color: transparent;
+
+}
+.reviewonebox{
+    display: inline-block;
+    width: 220px;
+    background-color: white;
+    padding-left: 10px;
+    padding-right:10px;
+    margin-bottom:40px;
+    margin-left:80px;
+    border-radius: 5px;
+    
+}
+.review1{
+    height: 20vh;
+    overflow-y: auto;
+    padding-left:3px;
+    background-color:  rgb(237, 237, 237);
+    
+}
+.reviewtitle{
+    text-align: center;
+}
+.reviewonename{
+    text-align:center;
+    margin-bottom:0px;
+}
+.review_one_occ{
+    text-align: center;
+    margin-top: 0px;
+}
+.review_one_img{
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+
+}
+.stardiv{
+    padding-left:60px;
+}
+
+.headingreviews strong{
+    color: white;
+    font-weight: 300;
+    font-size: 10vh;
+    background-color: transparent;
+}
+
+.locations{
+    margin-top: 12vh;
+}
+
+.row1v p{
+    background-color: transparent;
+}
+
+.row1v{
+    background-color: transparent;
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.revs{
+    margin-left: 6.5%;
+    background-color: transparent;
+}
+
+.row1 div img{
+    box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.75);
+    transform: scale(90%);
+    transition: 0.2s;
+}
+
+.row1 div img:hover{
+    transform: scale(100%);
+    transition: 0.2s;
+}

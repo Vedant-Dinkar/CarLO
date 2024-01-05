@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Ubuntu;
+            user-select: none;
+            margin: 0;
+        }
+
+        .navbar{
+            background-color: rgb(35, 64, 113);
+            height: 12vh;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        #mainLogo{
+            position: absolute;
+            transform: translate(-50%, -50%);
+            height: 80px;
+            margin-left:8vh ;
+            top: 50%;
+            background-color: transparent;
+        }
+
+        ul{
+            display: flex;
+            top: 40%;
+            background-color: transparent;
+            position: relative;
+            justify-content: space-between;
+        }
+
+        ul a{
+            background-color: transparent;
+            margin: 0 10%;
+            text-decoration: none;
+            color: white;
+        }
+
+        ul a:hover{
+            color: aqua;
+        }
+
+        .profile{
+            overflow: hidden;
+            height: 50px;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 20px;
+            background-color: transparent;
+        }
+
+        .profile img{
+            border-radius: 50%;
+            height: 50px;
+            background-color: transparent;
+        }
+
+        .profile-logout{
+            margin-top: 10vh;
+             margin-right: 10vh; 
+             width:10vh;
+             color: white;
+             background-color:rgb(35, 64, 113);
+             border-radius: 10px;
+             text-align: center;
+             height: 3.5vh;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 12vh;
+            left: 0;
+            background-color: rgb(35, 64, 113);
+            padding-top: 20px;
+        }
+        
+        .sidebar a {
+            padding: 45px 15px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 25px;
+            color: rgb(255, 255, 255);
+            display: block;
+            transition: 0.1s;
+        }
+        
+        .sidebar a:hover {
+            background-color: rgb(24, 45, 81);
+            transition: 0.1s;
+        }
+
+        .selected{
+            background-color: rgb(24, 45, 81);
+        }
+
+        .admin{
+            font-family:'Ubuntu';
+            margin-left: 100px;
+        }
+
+        .expense{
+            display:flex;
+            position: absolute;
+            margin-left: 40%;
+            margin-top: 70px;
+            font-size: 35px;
+            font-family: 'Ubuntu';
+        }
+
+        .income{
+            display:flex;
+            position: absolute;
+            margin-left: 70%;
+            margin-top: 70px;
+            font-size: 35px;
+            font-family: 'Ubuntu';
+        }
+
+        .exppic{
+            position: absolute;
+            height: 300px;
+            margin-left: 37%;
+            margin-top: 110px;
+        }
+
+        .incpic{
+            position: absolute;
+            height: 300px;
+            margin-left: 62.5%;
+            margin-top: 110px;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="navbarContainer">
+        <div class="navbar">
+            <ul>
+                <img id="mainLogo" src="/static/logo.png" />
+                <h1 style="margin-left: 75%; color: white">CarLO Admin Portal</h1>
+                <div class="profile">
+                    <img src="/static/profileLogo.png" />
+                </div>
+                <div class="profile profile-logout"><a href="logout" style="color: white;">logout</a></div>
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a href="#" class="selected">Home</a>
+        
+        <a href="addcar">Add Car</a>
+        <a href="center">Add Centre</a>
+        
+        
+    </div>
+    
+    <div style="margin-left: 40%; margin-top:12vh; padding: 20px;">
+        <h1 class="admin" style="font-size: 50px;">Welcome Admin!</h1>
+    </div>
+        <div class="expense"><b>Total Expenses</b></div>
+        <div class="income"><b>Total Income</b></div>
+        <img src="/static/3589863.png" class="exppic"></img>
+        <img src="/static/unnamed.png" class="incpic"></img>    
+</body>
+</html>

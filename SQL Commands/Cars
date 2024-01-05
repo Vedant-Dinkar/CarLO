@@ -1,0 +1,13 @@
+CREATE TABLE cars(
+    num VARCHAR(20) PRIMARY KEY,
+    model VARCHAR(255) NOT NULL,
+	imagelink VARCHAR(1000) NOT NULL,
+    year INTEGER NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    bookedby VARCHAR(255),
+    bookedtill TIMESTAMP,
+    centrecity VARCHAR(255) NOT NULL,
+    pph INTEGER NOT NULL,
+    bookedtimes INTEGER DEFAULT 0,
+	fuel VARCHAR(10) NOT NULL
+);

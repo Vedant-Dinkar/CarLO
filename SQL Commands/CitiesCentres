@@ -1,0 +1,7 @@
+CREATE TABLE citiescentres(
+    centreid SERIAL PRIMARY KEY,
+    centrecity VARCHAR(255) NOT NULL,
+	location VARCHAR(1000) NOT NULL,
+    imagelink VARCHAR(1000) NOT NULL,
+	pincode INTEGER NOT NULL
+);

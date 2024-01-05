@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/user.css">
+    <link rel="stylesheet" href="/">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+    <title>User Dashboard</title>
+</head>
+<body>
+    <div class="screen" style="display: flex; flex-flow: column;">
+    <div class="m">
+
+        <div class="navbarContainer">
+            <div class="navbar">
+              <ul>
+                <img id="mainLogo" src="logo.png" />
+                <a href="#ghar">Home</a>
+                <a href="#kiraaya">Rent</a>
+                <a href="#jagaha">Locations</a>
+                <a href="#samparka">Contact Us</a>
+                <div class="profile">
+                  <img src="profileLogo.png" />
+                </div>
+              </ul>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="user">
+                <div class="user-image">
+                    <img class = "user-im" src=<%= img.data %>>
+                </div>
+                <div class="user-info">
+                    <h2 class="user-info-text">Welcome <%= user %></h2>
+                    <br>
+                    <p>Check your bookings here!</p>
+                </div>
+            </div>
+            <div class="booking">
+                <div class="booking-heading">
+                    <div class="dat">ID</div>
+                    <div class="dat">Car</div>
+                    <div class="dat">Start</div>
+                    <div class="dat">End</div>
+                    <div class="dat">From</div>
+                    <div class="dat">To</div>
+                    <div class="dat">Amount</div>
+                </div>
+                <div class="booking-content">
+                    <% book.forEach(listing =>{ %>
+                        <div class="res">
+                            <div class="res1 res-id"><%= listing.paymentid %></div>
+                            <img src="<%= listing.image_car %>" />
+                            <div class="res1 res-start"><%= listing.start_date.toString().slice(4,16) %>
+                                <!-- <script>
+                                    const startDate = listing.start_date;
+                                    const formattedstartDate = startDate.slice(0,16);
+                                    document.getElementById('displayDate').innerText = formattedstartDate;
+                                </script> -->
+                                <!-- <p id="displayDate"></p> -->
+                                
+                            </div>
+                            <div class="res1 res-end"><%= listing.end_date.toString().slice(4,16) %></div>
+                            <div class="res1 res-from"><%= listing.center_from %></div>
+                            <div class="res1 res-to"><%= listing.center_to %></div>
+                            <div class="res1 res-amount"><%= listing.amount %></div>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

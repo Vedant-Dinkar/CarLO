@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Ubuntu;
+            user-select: none;
+            margin: 0;
+        }
+
+        .navbar{
+            background-color: rgb(35, 64, 113);
+            height: 12vh;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        #mainLogo{
+            position: absolute;
+            transform: translate(-50%, -50%);
+            height: 50px;
+            top: 50%;
+            background-color: transparent;
+        }
+
+        ul{
+            display: flex;
+            top: 40%;
+            background-color: transparent;
+            position: relative;
+            justify-content: space-between;
+        }
+
+        ul a{
+            background-color: transparent;
+            margin: 0 10%;
+            text-decoration: none;
+            color: white;
+        }
+
+        ul a:hover{
+            color: aqua;
+        }
+
+        .profile{
+            overflow: hidden;
+            height: 50px;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            right: 20px;
+            background-color: transparent;
+        }
+
+        .profile img{
+            border-radius: 50%;
+            height: 50px;
+            background-color: transparent;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 12vh;
+            left: 0;
+            background-color: rgb(35, 64, 113);
+            padding-top: 20px;
+        }
+        
+        .sidebar a {
+            padding: 45px 15px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 25px;
+            color: rgb(255, 255, 255);
+            display: block;
+            transition: 0.1s;
+        }
+        
+        .sidebar a:hover {
+            background-color: rgb(24, 45, 81);
+            transition: 0.1s;
+        }
+
+        .selected{
+            background-color: rgb(24, 45, 81);
+        }
+
+        .drop{
+            height: 250px;
+            width: 400px;
+            border: 4px dotted;
+            display: flex;
+            margin-left: 73%;
+
+        }
+        .image-div{
+            display: flexbox;
+        }
+        .form-form{
+            padding-top: 10px;
+            padding-left: 80px;
+            display:flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbarContainer">
+        <div class="navbar">
+            <ul>
+                <img id="mainLogo" src="/logo.png" />
+                <h1 style="margin-left: 75%; color: white">CarLO Admin Portal</h1>
+                <div class="profile">
+                    <img src="/profileLogo.png" />
+                </div>
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar">
+        <a href="#">Home</a>
+        <a href="#">Gallery</a>
+        <a href="#" class="selected">Add Car</a>
+        <a href="#">Add Centre</a>
+        <a href="#">Add Reviews</a>
+    </div>
+    
+    <div style="margin-left: 40%; margin-top:12vh; padding: 20px;">
+        <h1 style="font-size: 50px;  font-family:'Ubuntu'; margin-left: 100px;">
+            Add Cars
+        </h1>
+    </div>
+    <div style="display: flex ; flex-flow: row">
+            <div class="image-div">
+                <input type="file" class="drop">
+            </input>
+            </div>
+            
+            <div class="form-form">
+                <form>
+                    <p style="margin-left: 300px;">Name of Car</p>
+                    <input style="margin-left: 75%;margin-bottom: 10px;
+                                width: 300px;
+                                height: 30px;
+                                border-radius: 15px;
+                                " required></input>
+                    <p style="margin-left: 300px;">Name of model</p>
+                    <input style="margin-left: 75%;margin-bottom: 10px;
+                                width: 300px;
+                                height: 30px;
+                                border-radius: 15px;" required></input>
+                    <p style="margin-left: 300px;">Year of Car</p>
+                    <input type = "text" style="margin-left: 75%;margin-bottom: 10px;
+                                width: 300px;
+                                height: 30px;
+                                border-radius: 15px;" required></input>
+                    <p style="margin-left: 300px">Name of Centre</p>
+                    <input style="margin-left: 75%;margin-bottom: 10px;
+                                width: 300px;
+                                height: 30px;
+                                border-radius: 15px;" required></input>
+                    <p style="margin-left: 300px;">Price per Hour</p>
+                    <input type = "text" style="margin-left: 75%;margin-bottom: 10px;
+                                width: 300px;
+                                height: 30px;
+                                border-radius: 15px;" required></input>
+                    <lable for="feul"></lable>
+                    <p style="margin-left: 300px;">Car Feul</p>
+                    <select id="feul" for="feul" style="margin-left: 75%;margin-bottom: 10px;
+                                width: 100px;
+                                height: 30px;
+                                border-radius: 15px;" required>
+                        <option value="petrol">petrol</option> 
+                        <option value="diesel">diesel</option> 
+                        <option value="Electric">Electric</option> 
+                    </select>
+                    <button type="submit" style= "margin-left : 80%;
+                            width:100px; 
+                            height: 30px;
+                            border-radius: 15px;  
+                            background-color:rgb(226, 244, 22);
+                            font-family: 'Ubuntu';
+                            margin-top: 10px;">
+                            Submit
+                    </button>
+                </form>
+    </div>
+</body>
+</html>
